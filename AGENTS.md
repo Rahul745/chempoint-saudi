@@ -31,3 +31,4 @@ use the editor.
 
 - Keep the site’s company/product claims grounded in supplied facts; omit unverifiable Chempoint credentials, product specifications, contact details, and locations.
 - Use a Saudi-focused, English/Arabic-ready industrial visual system with semantic tokens in `src/styles.css`; keep public company and product content on the homepage until verified details support dedicated pages.
+- The static export explicitly prerenders public routes and copies the client output to `out/`, so exports remain static-hostable without including server bundles.
