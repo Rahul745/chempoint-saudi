@@ -28,3 +28,6 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep the site’s company/product claims grounded in supplied facts; omit unverifiable Chempoint credentials, product specifications, contact details, and locations.
+- Use a Saudi-focused, English/Arabic-ready industrial visual system with semantic tokens in `src/styles.css`; keep public company and product content on the homepage until verified details support dedicated pages.
