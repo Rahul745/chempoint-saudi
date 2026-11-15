@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ApproachRouteImport } from './routes/approach'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as ProductsIndexRouteImport } from './routes/products.index'
+import { Route as ProductsCategoryRouteImport } from './routes/products.$category'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApproachRoute = ApproachRouteImport.update({
+  id: '/approach',
+  path: '/approach',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsIndexRoute = ProductsIndexRouteImport.update({
+  id: '/products/',
+  path: '/products/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductsCategoryRoute = ProductsCategoryRouteImport.update({
+  id: '/products/$category',
+  path: '/products/$category',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRoute
+  '/products/$category': typeof ProductsCategoryRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRoute
+  '/products/$category': typeof ProductsCategoryRoute
+  '/products': typeof ProductsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/approach': typeof ApproachRoute
+  '/contact': typeof ContactRoute
+  '/industries': typeof IndustriesRoute
+  '/products/$category': typeof ProductsCategoryRoute
+  '/products/': typeof ProductsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/approach'
+    | '/contact'
+    | '/industries'
+    | '/products/$category'
+    | '/products/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/approach'
+    | '/contact'
+    | '/industries'
+    | '/products/$category'
+    | '/products'
+  id:
+    | '__root__'
+    | '/'
+    | '/approach'
+    | '/contact'
+    | '/industries'
+    | '/products/$category'
+    | '/products/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApproachRoute: typeof ApproachRoute
+  ContactRoute: typeof ContactRoute
+  IndustriesRoute: typeof IndustriesRoute
+  ProductsCategoryRoute: typeof ProductsCategoryRoute
+  ProductsIndexRoute: typeof ProductsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/approach': {
+      id: '/approach'
+      path: '/approach'
+      fullPath: '/approach'
+      preLoaderRoute: typeof ApproachRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/': {
+      id: '/products/'
+      path: '/products'
+      fullPath: '/products/'
+      preLoaderRoute: typeof ProductsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/products/$category': {
+      id: '/products/$category'
+      path: '/products/$category'
+      fullPath: '/products/$category'
+      preLoaderRoute: typeof ProductsCategoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApproachRoute: ApproachRoute,
+  ContactRoute: ContactRoute,
+  IndustriesRoute: IndustriesRoute,
+  ProductsCategoryRoute: ProductsCategoryRoute,
+  ProductsIndexRoute: ProductsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
