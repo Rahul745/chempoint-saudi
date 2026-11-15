@@ -1,0 +1,4 @@
+- [ ] Create dedicated Home, Products, Industries, Approach, Contact, and product-family pages with shared navigation.
+- [ ] Add a client-only interactive 3D materials visual and a reduced-motion fallback.
+- [ ] Include every public page in static prerendering and add route coverage tests.
+- [ ] Verify responsive pages, 3D rendering, tests, and current build logs.
