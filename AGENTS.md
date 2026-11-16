@@ -30,5 +30,7 @@ use the editor.
 <!-- LOVABLE:END -->
 
 - Keep the site’s company/product claims grounded in supplied facts; omit unverifiable Chempoint credentials, product specifications, contact details, and locations.
-- Use a Saudi-focused, English/Arabic-ready industrial visual system with semantic tokens in `src/styles.css`; keep public company and product content on the homepage until verified details support dedicated pages.
+- Use a Saudi-focused, English/Arabic-ready industrial visual system with semantic tokens in `src/styles.css`; dedicated pages may present generic product families and application categories, but do not add unverified specifics.
 - The static export explicitly prerenders public routes and copies the client output to `out/`, so exports remain static-hostable without including server bundles.
+- Keep navigation on TanStack file-based routes with shared site chrome; enumerate every public static page in `vite.config.ts` so the HTML export includes it.
+- Load interactive 3D product visuals only on the client and keep them abstract unless verified product imagery or models are supplied.

@@ -11,7 +11,17 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
   tanstackStart: {
-    pages: [{ path: "/" }],
+    pages: [
+      { path: "/" },
+      { path: "/products" },
+      { path: "/products/epoxy-flooring" },
+      { path: "/products/resins-hardeners" },
+      { path: "/products/protective-coatings" },
+      { path: "/products/construction-chemicals" },
+      { path: "/industries" },
+      { path: "/approach" },
+      { path: "/contact" },
+    ],
     prerender: { enabled: true, autoStaticPathsDiscovery: false },
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this

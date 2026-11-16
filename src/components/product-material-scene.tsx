@@ -9,7 +9,8 @@ function LayeredSample({ palette, reducedMotion }: { palette: MaterialPalette; r
 
   useFrame(({ clock, pointer }, delta) => {
     if (!sample.current) return;
-    const elapsed = reducedMotion ? 0 : clock.getElapsedTime() * 0.12;
+    if (reducedMotion) return;
+    const elapsed = clock.getElapsedTime() * 0.12;
     sample.current.rotation.y += (pointer.x * 0.22 + elapsed - sample.current.rotation.y) * Math.min(delta * 2.5, 1);
     sample.current.rotation.x += (0.16 - pointer.y * 0.13 - sample.current.rotation.x) * Math.min(delta * 2.5, 1);
   });
