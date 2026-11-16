@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import warehouseImage from "@/assets/chempoint-epoxy-warehouse.jpg";
 import { MaterialVisual } from "@/components/material-visual";
-import { ContactLink, ProductGrid } from "@/components/site-sections";
+import { ProductGrid } from "@/components/site-sections";
 import { SiteLayout } from "@/components/site-shell";
 import { markets, pageMeta } from "@/lib/site-content";
 
@@ -23,7 +23,7 @@ function HomePage() {
               <p className="mb-6 flex items-center gap-3 text-xs font-bold uppercase text-accent"><span className="h-px w-9 bg-accent" />CHEMICAL SOLUTIONS · SAUDI ARABIA</p>
               <h1 className="font-display text-5xl font-semibold leading-[1.08] sm:text-6xl lg:text-7xl" id="home-title">Built for the<br />surfaces that<br /><span className="text-accent">move us forward.</span></h1>
               <p className="mt-7 max-w-[510px] text-base leading-7 text-primary-foreground/85 sm:text-lg">Explore chemical product families for industrial flooring, coatings, construction, and manufacturing.</p>
-              <div className="mt-9 flex flex-wrap gap-3"><ContactLink>Explore product range</ContactLink><Link className="inline-flex min-h-12 items-center gap-2 border border-primary-foreground/50 px-5 text-sm font-medium transition-colors hover:bg-primary-foreground/10" to="/contact">Talk to our team <ArrowUpRight aria-hidden="true" className="size-4" /></Link></div>
+              <div className="mt-9 flex flex-wrap gap-3"><Link className="inline-flex min-h-12 items-center gap-2 bg-accent px-6 text-sm font-semibold text-foreground transition-colors hover:bg-accent/85" to="/products">Explore product range <ArrowRight aria-hidden="true" className="size-4" /></Link><Link className="inline-flex min-h-12 items-center gap-2 border border-primary-foreground/50 px-5 text-sm font-medium transition-colors hover:bg-primary-foreground/10" to="/contact">Talk to our team <ArrowUpRight aria-hidden="true" className="size-4" /></Link></div>
               <Link className="mt-10 inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground" to="/products">Discover what we do <ArrowDown aria-hidden="true" className="size-4" /></Link>
             </div>
             <div className="relative mx-auto h-[340px] w-full max-w-[510px] sm:h-[440px] lg:h-[510px]">
