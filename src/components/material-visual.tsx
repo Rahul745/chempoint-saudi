@@ -10,7 +10,7 @@ function tokenHex(name: string, context: CanvasRenderingContext2D): string {
   context.fillStyle = value;
   context.fillRect(0, 0, 1, 1);
   const [red, green, blue] = context.getImageData(0, 0, 1, 1).data;
-  return `#${[red, green, blue].map((channel) => channel.toString(16).padStart(2, "0")).join("")}`;
+  return `#${[red, green, blue].map((channel) => (channel ?? 0).toString(16).padStart(2, "0")).join("")}`;
 }
 
 function useMaterialPalette() {
